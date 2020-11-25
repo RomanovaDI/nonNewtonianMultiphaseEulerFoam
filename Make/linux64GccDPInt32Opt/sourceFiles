@@ -1,4 +1,0 @@
-SOURCE = \
-nonNewtonianMultiphaseEulerFoam.C \
-
-# sources
