@@ -14,4 +14,4 @@ heatTransferModels/heatTransferModel/heatTransferModel.C
 heatTransferModels/heatTransferModel/newHeatTransferModel.C
 heatTransferModels/RanzMarshall/RanzMarshall.C
 
-LIB = $(FOAM_USER_LIBBIN)/libcompressibleMultiphaseEulerianInterfacialModels
+LIB = $(FOAM_USER_LIBBIN)/libcompressibleNonNewtonianMultiphaseEulerianInterfacialModels

@@ -16,9 +16,10 @@ EXE_LIBS = \
     -lfiniteVolume \
     -lfvOptions \
     -lmeshTools \
-    -lmultiphaseSystem \
+    -L$(FOAM_USER_LIBBIN) \
+	-lnonNewtonianMultiphaseSystem \
     -linterfaceProperties \
     -lincompressibleTransportModels \
-    -lcompressibleMultiphaseEulerianInterfacialModels \
+    -lcompressibleNonNewtonianMultiphaseEulerianInterfacialModels \
     -lturbulenceModels \
     -lincompressibleTurbulenceModels
