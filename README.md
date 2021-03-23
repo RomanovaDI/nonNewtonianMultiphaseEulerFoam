@@ -1,2 +1,2 @@
 # nonNewtonianMultiphaseEulerFoam
-Multiphase Euler OpenFOAM-v1912 solver for non-Newtonian fluids
+Multiphase Euler OpenFOAM solver for non-Newtonian fluids compatible with v1912, v2012
