@@ -1,9 +1,0 @@
-EXE_INC = \
-    -I../multiphaseSystem/lnInclude \
-    -I$(LIB_SRC)/finiteVolume/lnInclude \
-    -I$(LIB_SRC)/transportModels \
-    -I$(LIB_SRC)/transportModels/incompressible/lnInclude \
-    -I$(LIB_SRC)/transportModels/incompressible/singlePhaseTransportModel
-
-LIB_LIBS = \
-    -lmultiphaseSystem
