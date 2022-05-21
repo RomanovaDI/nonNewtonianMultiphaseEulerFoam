@@ -55,7 +55,6 @@ void Foam::multiphaseSystem::calcAlphas()
     }
 }
 
-
 void Foam::multiphaseSystem::solveAlphas()
 {
     PtrList<surfaceScalarField> alphaPhiCorrs(phases_.size());

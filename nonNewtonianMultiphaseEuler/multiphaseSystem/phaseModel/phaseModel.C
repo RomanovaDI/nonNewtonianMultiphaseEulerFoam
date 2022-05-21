@@ -198,9 +198,6 @@ Foam::phaseModel::phaseModel
         phaseDict_,
         *this
     );
-
-	//nu_.rename("nu"+name_);
-	correct();
 }
 
 
@@ -222,10 +219,6 @@ Foam::autoPtr<Foam::phaseModel> Foam::phaseModel::clone() const
 
 void Foam::phaseModel::correct()
 {
-    Info<< "phaseModel.correct()" << nl << endl;
-	fluid_.correct();
-	nu_ = fluid_.nu();
-	//nu_.write();
     //nuModel_->correct();
 }
 
@@ -271,14 +264,5 @@ Foam::tmp<Foam::volScalarField> Foam::phaseModel::d() const
     return dPtr_().d();
 }
 
-/*const Foam::volScalarField& Foam::phaseModel::nu() const
-{
-    return nu_;
-}*/
-
-/*const Foam::scalarField& Foam::phaseModel::nu(const label patchi) const
-{
-    return nu_.boundaryField()[patchi];
-}*/
 
 // ************************************************************************* //
