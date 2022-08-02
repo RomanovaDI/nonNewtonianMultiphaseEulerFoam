@@ -80,13 +80,19 @@
         );
         dragCoeffi.correctBoundaryConditions();
 
-        rAUs.set(phasei, (1.0/(UEqns[phasei].A() + dragCoeffi)).ptr());
+		dimensionedScalar SMALL00_100
+		(
+			"SMALL00_100",
+			dimensionSet(0,0,-1,0,0,0,0),
+			scalar(SMALL)
+		);
+        rAUs.set(phasei, (1.0/(UEqns[phasei].A() + dragCoeffi + SMALL00_100)).ptr());
         rAlphaAUfs.set
         (
             phasei,
             (
                 alphafs[phasei]
-               /fvc::interpolate(UEqns[phasei].A() + dragCoeffi)
+               /fvc::interpolate(UEqns[phasei].A() + dragCoeffi + SMALL00_100)
             ).ptr()
         );
 
@@ -139,7 +145,7 @@
 
             phiHbyAs[phasei] +=
                 fvc::interpolate((*dcIter())/phase.rho())
-               /fvc::interpolate(UEqns[phasei].A() + dragCoeffi)
+               /fvc::interpolate(UEqns[phasei].A() + dragCoeffi+SMALL00_100)
                *phase2Ptr->phi();
 
             HbyAs[phasei] +=
@@ -162,6 +168,7 @@
 
         ++phasei;
     }
+
 
     surfaceScalarField rAUf
     (
